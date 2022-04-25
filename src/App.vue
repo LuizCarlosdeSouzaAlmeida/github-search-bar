@@ -1,3 +1,12 @@
+<script setup>
+import { useMainStore } from "@/store/main";
+import { storeToRefs } from "pinia";
+
+const main = useMainStore();
+
+const { accounts, selectedAccount } = storeToRefs(main);
+</script>
+
 <template>
   <v-app>
     <v-main>
@@ -7,15 +16,3 @@
     </v-main>
   </v-app>
 </template>
-
-<script>
-export default {
-  name: "App",
-
-  components: {},
-
-  data: () => ({
-    //
-  }),
-};
-</script>
