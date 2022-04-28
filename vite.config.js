@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vuetify from '@vuetify/vite-plugin'
+import svgLoader from "vite-svg-loader";
 
 const path = require('path')
 
@@ -12,11 +13,12 @@ export default defineConfig({
     vuetify({
       autoImport: true,
     }),
+    svgLoader(),
   ],
-  define: { 'process.env': {} },
+  define: { "process.env": {} },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      "@": path.resolve(__dirname, "src"),
     },
   },
   /* remove the need to specify .vue files https://vitejs.dev/config/#resolve-extensions
@@ -32,4 +34,4 @@ export default defineConfig({
     ]
   },
   */
-})
+});

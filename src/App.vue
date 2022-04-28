@@ -9,9 +9,7 @@ const { accounts, selectedAccount } = storeToRefs(main);
 
 <template>
   <v-app>
-    <v-main>
-      <router-link to="/">Home</router-link>
-      <router-link to="/results">Search</router-link>
+    <v-main class="app">
       <router-view />
     </v-main>
   </v-app>
@@ -27,5 +25,11 @@ const { accounts, selectedAccount } = storeToRefs(main);
   --purple: #A51C92;
   --gradient: linear-gradient(90deg, #A51C92 0%, #F638DC 100%);
   --gradient_white: linear-gradient(359.39deg, #EFEEEE 0.46%, #FFFFFF 99.42%);
+}
+* {
+  box-sizing: border-box;
+}
+.app {
+  background: var(--gradient_white);
 }
 </style>
