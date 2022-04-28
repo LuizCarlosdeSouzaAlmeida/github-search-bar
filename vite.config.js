@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vuetify from '@vuetify/vite-plugin'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import vuetify from "@vuetify/vite-plugin";
 import svgLoader from "vite-svg-loader";
 
-const path = require('path')
+const path = require("path");
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,7 +13,9 @@ export default defineConfig({
     vuetify({
       autoImport: true,
     }),
-    svgLoader(),
+    svgLoader({
+      svgo: false,
+    }),
   ],
   define: { "process.env": {} },
   resolve: {

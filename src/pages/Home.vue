@@ -6,7 +6,7 @@ import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
 
 <template>
   <v-container class="home">
-  <img class="home-bg--image" src="@/assets/Cover.png" />
+    <img class="home-bg--image" src="@/assets/Cover.png" />
     <v-row class="home-logo py-15">
       <Logo />
     </v-row>
