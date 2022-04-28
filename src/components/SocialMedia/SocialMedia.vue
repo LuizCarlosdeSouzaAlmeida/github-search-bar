@@ -5,16 +5,25 @@ import Instagram from "@/assets/Instagram.svg";
 </script>
 
 <template>
-  <v-container class="media-bar">
-    <Medium class="media-bar--icon" />
-    <LinkedIn class="media-bar--icon" />
-    <Instagram class="media-bar--icon" />
+  <v-container class="media-bar d-flex justify-center">
+    <a href="https://medium.com/">
+      <Medium class="media-bar--icon" />
+    </a>
+    <a href="https://www.linkedin.com/in/luiz-carlos-de-souza-almeida/">
+      <LinkedIn class="media-bar--icon" />
+    </a>
+    <a href="">
+      <Instagram class="media-bar--icon" />
+    </a>
   </v-container>
 </template>
 
 <style scoped>
 * {
   color: var(--secondary-1);
+}
+.media-bar {
+  margin: 0;
 }
 .media-bar--icon {
   height: 24px;

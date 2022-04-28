@@ -5,9 +5,9 @@ import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
 </script>
 
 <template>
-  <v-container>
+  <v-container class="home">
   <img class="home-bg--image" src="@/assets/Cover.png" />
-    <v-row>
+    <v-row class="home-logo py-15">
       <Logo />
     </v-row>
     <v-row>
@@ -16,10 +16,10 @@ import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
         ficou muito <span class="home-title--bold">fácil!</span>
       </h1>
     </v-row>
-    <v-row>
+    <v-row class="home-searchBar">
       <SearchBar />
     </v-row>
-    <v-row>
+    <v-row class="home-social-media--bar">
       <SocialMedia />
     </v-row>
   </v-container>
@@ -33,6 +33,12 @@ import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
   height: 85%;
   z-index: 0;
 }
+.home {
+  margin-left: 150px;
+}
+.home-logo {
+  margin-bottom: 81px;
+}
 .home-title {
   font-family: Raleway;
   font-weight: 400;
@@ -42,5 +48,13 @@ import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
 }
 .home-title--bold {
   font-weight: 700;
+}
+.home-searchBar {
+  margin-top: 81px;
+}
+.home-social-media--bar {
+  position: absolute;
+  width: 100%;
+  bottom: 41px;
 }
 </style>
