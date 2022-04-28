@@ -1,5 +1,6 @@
 <script setup>
 import GitHub from "@/assets/GitHub.svg";
+import NoResultsDialog from "@/components/SearchBar/NoResultsDialog/NoResultsDialog.vue";
 </script>
 <template>
   <v-col cols="12" sm="6" class="d-flex d-inline">
@@ -21,6 +22,7 @@ import GitHub from "@/assets/GitHub.svg";
       <GitHub />
     </v-btn>
   </v-col>
+  <NoResultsDialog />
 </template>
 
 <style scoped>

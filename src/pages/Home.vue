@@ -56,5 +56,6 @@ import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
   position: absolute;
   width: 100%;
   bottom: 41px;
+  color: var(--secondary-1);
 }
 </style>
