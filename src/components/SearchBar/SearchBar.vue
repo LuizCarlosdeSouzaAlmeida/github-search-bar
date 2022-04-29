@@ -3,14 +3,14 @@ import GitHub from "@/assets/GitHub.svg";
 import NoResultsDialog from "@/components/SearchBar/NoResultsDialog/NoResultsDialog.vue";
 </script>
 <template>
-  <v-col cols="12" sm="6" class="d-flex d-inline">
+  <v-col cols="12" class="d-flex d-inline pa-0">
     <v-text-field
       prepend-inner-icon="mdi-magnify"
       label="Buscar usuário"
       variant="putlined"
       bg-color="#fff"
       single-line
-      class="searchBar"
+      class="searchBar rounded"
     ></v-text-field>
     <v-btn
       height="56px"

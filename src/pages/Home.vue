@@ -17,7 +17,9 @@ import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
       </h1>
     </v-row>
     <v-row class="home-searchBar">
-      <SearchBar />
+      <v-col class="pa-0" cols="6">
+        <SearchBar />
+      </v-col>
     </v-row>
     <v-row class="home-social-media--bar">
       <SocialMedia />
