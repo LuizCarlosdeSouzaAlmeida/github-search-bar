@@ -5,7 +5,7 @@ import Instagram from "@/assets/Instagram.svg";
 </script>
 
 <template>
-  <div class="media-bar d-flex px-0">
+  <v-container class="media-bar d-flex px-0">
     <a href="https://medium.com/">
       <Medium class="media-bar--icon" />
     </a>
@@ -15,12 +15,13 @@ import Instagram from "@/assets/Instagram.svg";
     <a href="">
       <Instagram class="media-bar--icon" />
     </a>
-  </div>
+  </v-container>
 </template>
 
 <style scoped>
 .media-bar {
   margin: 0;
+  justify-content: center;
 }
 .media-bar--icon {
   height: 24px;

@@ -58,8 +58,4 @@ a {
   color: var(--secondary-1);
   text-decoration: none;
 }
-
-:deep() .media-bar {
-  justify-content: center;
-}
 </style>
