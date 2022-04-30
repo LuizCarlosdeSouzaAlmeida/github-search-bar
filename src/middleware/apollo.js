@@ -13,7 +13,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      Authorization: "Bearer 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",
+      Authorization: "Bearer " + import.meta.env.VITE_GITHUB_API_KEY,
     },
   };
 });
