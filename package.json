@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.1",
     "@mdi/font": "5.9.55",
+    "@vue/apollo-composable": "^4.0.0-alpha.16",
+    "graphql": "^16.4.0",
+    "graphql-tag": "^2.12.6",
     "pinia": "^2.0.13",
     "roboto-fontface": "*",
     "vue": "^3.2.25",

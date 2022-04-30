@@ -1,72 +1,22 @@
 <script setup>
-var repos = [
-  {
-    id: 1,
-    name: "Bitwise",
-    commits_count: "1.5k",
-    last_commit_date: "1 dia atrás",
-    last_commit_hash: "0x0",
-  },
-  {
-    id: 2,
-    name: "dgagae",
-    commits_count: "0.5k",
-    last_commit_date: "5 dias atrás",
-    last_commit_hash: "0x0",
-  },
-  {
-    id: 3,
-    name: "Bitbhwrdeghwerwise",
-    commits_count: "1k",
-    last_commit_date: "3578 dias atrás",
-    last_commit_hash: "0x0",
-  },
-  {
-    id: 4,
-    name: "Bitbhwrdeghwerwise",
-    commits_count: "1k",
-    last_commit_date: "3578 dias atrás",
-    last_commit_hash: "0x0",
-  },
-  {
-    id: 5,
-    name: "Bitbhwrdeghwerwise",
-    commits_count: "1k",
-    last_commit_date: "3578 dias atrás",
-    last_commit_hash: "0x0",
-  },
-  {
-    id: 6,
-    name: "Bitbhwrdeghwerwise",
-    commits_count: "1k",
-    last_commit_date: "3578 dias atrás",
-    last_commit_hash: "0x0",
-  },
-  {
-    id: 7,
-    name: "Bitbhwrdeghwerwise",
-    commits_count: "1k",
-    last_commit_date: "3578 dias atrás",
-    last_commit_hash: "0x0",
-  },
-  {
-    id: 8,
-    name: "Bitbhwrdeghwerwise",
-    commits_count: "1k",
-    last_commit_date: "3578 dias atrás",
-    last_commit_hash: "0x0",
-  },
-];
+import { useMainStore } from "@/store/main";
+import { storeToRefs } from "pinia";
+
+const main = useMainStore();
+
+const { user } = storeToRefs(main);
 </script>
 <template>
   <v-row class="pt-8">
     <v-col cols="2">
-      <v-img class="rounded-circle" src="https://picsum.photos/120/120" />
+      <v-img class="profile-img rounded-circle" :src="user.avatarUrl" />
     </v-col>
     <v-col align-self="end">
-      <h2 class="py-3">Nome Sobrenome</h2>
+      <h2 class="py-3">{{ user.name }}</h2>
       <v-card class="text-center" width="96px" height="64px">
-        <v-card-header-text class="pt-2"> 32 </v-card-header-text>
+        <v-card-header-text class="pt-2">
+          {{ user.repositories.totalCount }}
+        </v-card-header-text>
         <v-card-text class="pa-0"> Repositórios </v-card-text>
       </v-card>
     </v-col>
@@ -83,14 +33,18 @@ var repos = [
         </tr>
       </thead>
       <tbody>
-        <tr v-for="repo in repos" :key="repo.id">
-          <td>{{ repo.name }}</td>
-          <td>{{ repo.commits_count }}</td>
-          <td>{{ repo.last_commit_date }}</td>
-          <td>{{ repo.last_commit_hash }}</td>
+        <tr v-for="repo in user.repositories.edges" :key="repo.node.name">
+          <td>{{ repo.node.name }}</td>
+          <td>{{ repo.node.object.history.totalCount || 0 }}</td>
+          <td>{{ repo.node.object.history.edges[0].node.message || 0 }}</td>
+          <td>{{ repo.node.object.history.edges[0].node.oid || 0 }}</td>
         </tr>
       </tbody>
     </v-table>
   </v-row>
 </template>
-<style scoped></style>
+<style scoped>
+.profile-img {
+  z-index: 1 !important;
+}
+</style>

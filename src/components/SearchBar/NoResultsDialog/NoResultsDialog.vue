@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
-var noResultsDialog = ref(true);
+var noResultsDialog = ref(false);
 </script>
 
 <template>

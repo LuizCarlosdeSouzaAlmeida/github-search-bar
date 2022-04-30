@@ -6,7 +6,7 @@ import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
 <template>
   <v-row align-content="center">
     <v-col cols="3">
-      <Logo />
+      <Logo class="navbar-logo" @click="this.$router.push('/')" />
     </v-col>
     <v-col cols="6">
       <SearchBar />
@@ -17,6 +17,9 @@ import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
   </v-row>
 </template>
 <style scoped>
+.navbar-logo {
+  cursor: pointer;
+}
 :deep() .media-bar {
   justify-content: end;
 }
