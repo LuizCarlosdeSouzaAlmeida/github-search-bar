@@ -5,28 +5,7 @@ import gql from "graphql-tag";
 export const useMainStore = defineStore("main", {
   state: () => ({
     user: {
-      repositories: {
-        edges: [
-          {
-            node: {
-              name: "test",
-              object: {
-                history: {
-                  totalCount: 1,
-                  edges: [
-                    {
-                      node: {
-                        oid: "cd4460d1e150986f79a67a1bda199daedc5cdbcb",
-                        message: "Final",
-                      },
-                    },
-                  ],
-                },
-              },
-            },
-          },
-        ],
-      },
+      repositories: {},
     },
   }),
   actions: {
@@ -38,7 +17,7 @@ export const useMainStore = defineStore("main", {
               user(login: "${userName}") {
                 name
                 avatarUrl
-                repositories(last: 10) {
+                repositories(last: 100) {
                   totalCount
                   edges {
                     node {

@@ -35,9 +35,21 @@ const { user } = storeToRefs(main);
       <tbody>
         <tr v-for="repo in user.repositories.edges" :key="repo.node.name">
           <td>{{ repo.node.name }}</td>
-          <td>{{ repo.node.object.history.totalCount || 0 }}</td>
-          <td>{{ repo.node.object.history.edges[0].node.message || 0 }}</td>
-          <td>{{ repo.node.object.history.edges[0].node.oid || 0 }}</td>
+          <td>
+            {{ repo.node.object ? repo.node.object.history.totalCount : "" }}
+          </td>
+          <td>
+            {{
+              repo.node.object
+                ? repo.node.object.history.edges[0].node.message
+                : ""
+            }}
+          </td>
+          <td>
+            {{
+              repo.node.object ? repo.node.object.history.edges[0].node.oid : ""
+            }}
+          </td>
         </tr>
       </tbody>
     </v-table>
