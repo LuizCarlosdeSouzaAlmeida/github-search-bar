@@ -6,10 +6,7 @@ import { useMainStore } from "@/store/main";
 const main = useMainStore();
 var githubUser = ref("");
 function search(context) {
-  if (context.$route.path === "/") {
-    context.$router.push("/details");
-  }
-  main.getUser(githubUser.value);
+  main.getUser(githubUser.value, context);
 }
 </script>
 <template>

@@ -1,13 +1,17 @@
 <script setup>
-import { ref } from "vue";
 import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
-var noResultsDialog = ref(false);
+import { useMainStore } from "@/store/main";
+import { storeToRefs } from "pinia";
+
+const main = useMainStore();
+
+const { noResultsDialog } = storeToRefs(main);
 </script>
 
 <template>
   <v-dialog width="786px" height="198px" v-model="noResultsDialog">
     <v-card width="786px" min-height="198px" class="noResultsDialog rounded-xl">
-      <a class="noResultsDialog-close" @click="noResultsDialog = false">
+      <a class="noResultsDialog-close" @click="main.noResultsDialog = false">
         <v-icon size="16px">mdi-close</v-icon>
       </a>
       <v-card-title class="noResultsDialog-title pt-14 pb-0 pl-10">

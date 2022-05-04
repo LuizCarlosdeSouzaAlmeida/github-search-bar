@@ -7,8 +7,8 @@ import GitHubResume from "../components/GitHubResume/GitHubResume.vue";
   <v-container>
     <NavBar />
     <GitHubResume />
-    <Footer />
   </v-container>
+  <Footer />
 </template>
 
 <style scoped></style>

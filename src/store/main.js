@@ -7,9 +7,10 @@ export const useMainStore = defineStore("main", {
     user: {
       repositories: {},
     },
+    noResultsDialog: false,
   }),
   actions: {
-    getUser(userName) {
+    getUser(userName, context) {
       apolloClient
         .query({
           query: gql`
@@ -45,9 +46,13 @@ export const useMainStore = defineStore("main", {
         .then((result) => {
           console.log(result);
           this.user = result.data.user;
+          if (context.$route.path === "/") {
+            context.$router.push("/details");
+          }
         })
         .catch((error) => {
           console.log(error);
+          this.noResultsDialog = true;
         });
     },
   },
