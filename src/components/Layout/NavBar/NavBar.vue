@@ -1,5 +1,5 @@
 <script setup>
-import Logo from "@/assets/Logo.svg";
+import Logo from "@/assets/LogoHeader.svg";
 import SearchBar from "@/components/SearchBar/SearchBar.vue";
 import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
 </script>
