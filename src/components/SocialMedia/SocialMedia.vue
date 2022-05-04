@@ -6,13 +6,13 @@ import Instagram from "@/assets/Instagram.svg";
 
 <template>
   <v-container class="media-bar d-flex px-0">
-    <a href="https://medium.com/">
+    <a href="https://medium.com/@bitwisetechnology">
       <Medium class="media-bar--icon" />
     </a>
-    <a href="https://www.linkedin.com/in/luiz-carlos-de-souza-almeida/">
+    <a href="https://www.linkedin.com/company/bitwisetechnology/?originalSubdomain=br">
       <LinkedIn class="media-bar--icon" />
     </a>
-    <a href="">
+    <a href="https://www.instagram.com/bitwisetechnology/">
       <Instagram class="media-bar--icon" />
     </a>
   </v-container>
