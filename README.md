@@ -2,6 +2,8 @@
 
 Interface com barra de busca utilizando a API GitHub GraphQL, para listar os repositórios do usuário e algumas informações.
 
+Você pode testar a aplicação aqui: [luizcarlos-github-search-bar.netlify.app](luizcarlos-github-search-bar.netlify.app)
+
 ## Instalação
 
 Para rodar o projeto primeiro faça o clone do repositório:
@@ -26,14 +28,14 @@ Na pasta `github-search-bar` altere o arquivo `.env` com [Sua chave da API do Gi
 - Apollo
 - Github Api
 - Graphql
+- Netlify
 
 ## Proximos passos
 
 - Testes unitários com vitest + @vue/testing-libry (encontrado um problema de integração do vitest com o vuetify 3)
-- Deploy Netlify (erro no deploy com o vite-svg-loader)
+- Responsividade
 - Internacionalização i18n
 - Acessibilidade a11y
-- Responsividade
 
 ## Imagens
 
