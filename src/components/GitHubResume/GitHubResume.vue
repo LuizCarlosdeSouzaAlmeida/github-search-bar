@@ -1,5 +1,5 @@
 <script setup>
-import { useMainStore } from "@/store/main";
+import  useMainStore  from "@/store/main";
 import { storeToRefs } from "pinia";
 
 const main = useMainStore();

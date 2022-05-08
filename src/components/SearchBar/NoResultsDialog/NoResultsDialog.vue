@@ -1,6 +1,6 @@
 <script setup>
 import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
-import { useMainStore } from "@/store/main";
+import  useMainStore  from "@/store/main";
 import { storeToRefs } from "pinia";
 
 const main = useMainStore();

@@ -2,11 +2,13 @@
 import { ref } from "vue";
 import GitHub from "@/assets/GitHub.svg";
 import NoResultsDialog from "@/components/SearchBar/NoResultsDialog/NoResultsDialog.vue";
-import { useMainStore } from "@/store/main";
+import useMainStore from "@/store/main";
+import { useRoute } from "vue-router";
 const main = useMainStore();
+const route = useRoute();
 var githubUser = ref("");
-function search(context) {
-  main.getUser(githubUser.value, context);
+function search() {
+  main.getUser(githubUser.value);
 }
 </script>
 <template>
@@ -15,24 +17,24 @@ function search(context) {
       v-model="githubUser"
       prepend-inner-icon="mdi-magnify"
       label="Buscar usuário"
-      variant="putlined"
+      variant="solo"
       bg-color="#fff"
       single-line
-      @keydown.enter.prevent="search(this)"
+      @keydown.enter.prevent="search()"
       :class="
-        this.$route.path === '/'
+        route.path === '/'
           ? 'searchBar rounded'
           : 'searchBar rounded elevation-4'
       "
     ></v-text-field>
     <v-btn
-      v-if="this.$route.path === '/'"
+      v-if="route.path === '/'"
       height="56px"
       width="64px"
       color="var(--secondary)"
       elevation="0"
       class="ml-n3"
-      @click="search(this)"
+      @click="search()"
     >
       <GitHub />
     </v-btn>

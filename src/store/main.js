@@ -1,16 +1,20 @@
 import { defineStore } from "pinia";
 import apolloClient from "../middleware/apollo";
 import gql from "graphql-tag";
+import { useRouter } from "vue-router";
 
-export const useMainStore = defineStore("main", {
+export default function useMainStore() {
+  const router = useRouter();
+  return defineStore("main", {
   state: () => ({
     user: {
+      name: null,
       repositories: {},
     },
     noResultsDialog: false,
   }),
   actions: {
-    getUser(userName, context) {
+    getUser(userName) {
       apolloClient
         .query({
           query: gql`
@@ -44,16 +48,13 @@ export const useMainStore = defineStore("main", {
           `,
         })
         .then((result) => {
-          console.log(result);
           this.user = result.data.user;
-          if (context.$route.path === "/") {
-            context.$router.push("/details");
-          }
+          router.push("/details");
         })
         .catch((error) => {
-          console.log(error);
           this.noResultsDialog = true;
         });
     },
   },
-});
+})();
+};
