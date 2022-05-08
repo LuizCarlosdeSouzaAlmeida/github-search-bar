@@ -41,7 +41,7 @@ const { user } = storeToRefs(main);
         </tr>
       </thead>
       <tbody>
-        <tr v-for="repo in user.repositories.edges" :key="repo.node.name">
+        <tr v-for="repo in user.repositories.edges.slice(0).reverse()" :key="repo.node.name">
           <td class="blue-text">{{ repo.node.name }}</td>
           <td class="blue-text">
             {{ repo.node.object ? repo.node.object.history.totalCount : "" }}
