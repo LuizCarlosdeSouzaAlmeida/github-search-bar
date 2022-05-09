@@ -10,7 +10,13 @@ Para rodar o projeto primeiro faça o clone do repositório:
 
     git clone https://github.com/LuizCarlosdeSouzaAlmeida/github-search-bar.git  
 
-Na pasta `github-search-bar` altere o arquivo `.env` com [Sua chave da API do GitHub](https://docs.github.com/pt/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) e então com o node rode:
+Na pasta `github-search-bar` altere o arquivo `.env` com [Sua chave da API do GitHub](https://docs.github.com/pt/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) e então instale o projeto com:
+
+    npm install
+    ou
+    yarn
+
+e rode com:
 
     npm run dev
     ou
